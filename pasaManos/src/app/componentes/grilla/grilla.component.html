@@ -1,0 +1,19 @@
+<table border=2>
+  <thead>
+    <tr>
+      <td>id</td>
+      <td>nombre</td>
+      <td>genero</td>
+      <td>poder</td>
+      <td>terreno</td>
+    </tr>
+  </thead>
+    <tbody>
+      <ng-container *ngFor = "let item of lista" >
+        <tr app-filaheroes [objeto]="item">
+          
+        </tr>
+      </ng-container>
+    </tbody>
+
+</table>
