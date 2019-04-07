@@ -1,0 +1,15 @@
+<!-- Pongo el nombre del control = nombre de mi objeto/instancia 
+en FormControl lo mismo, voy a poner el nombre de los FormControls que cree-->
+<form [formGroup]="formularioHeroe">
+<input type="text" formControlName='id' [ngClass]="{valid: formularioHeroe.controls.id.valid && formularioHeroe.controls.id.touched}">
+<input type="text" formControlName='nombre' [ngClass]="{
+valid: formularioHeroe.controls.nombre.valid && formularioHeroe.controls.nombre.touched,
+invalid: formularioHeroe.controls.nombre.invalid && formularioHeroe.controls.nombre.touched}">
+<input type="text" formControlName='sexo'>
+<input type="text" formControlName='poder'>
+<input type="text" formControlName='terreno'>
+<button name='btnLogear' (click)='logear()' [disabled]='formularioHeroe.invalid'>Enviar datos</button>
+<div *ngIf="formularioHeroe.controls.nombre.invalid && formularioHeroe.controls.nombre.touched">
+    El nombre es Obligatorio y debe tener 4 caracteres
+  </div>
+</form>
